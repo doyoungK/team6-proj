@@ -1,4 +1,4 @@
-# TEAM PROJECT - fastcampus
+# TEAM PROJECT - fastcampus!!!
 
 ## Todos
 - To make ui kit applied mobile/desktop design

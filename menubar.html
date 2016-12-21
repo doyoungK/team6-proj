@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style media="screen">
+  ul {
+    list-style: none;
+  }
+
+  .navigation {
+    width: 0;
+    height: 100%;
+    background-color: #586a55;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    padding-top: 20px;
+  }
+
+  .navigation ul, .navigation a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+  .navigation a:hover, .navigation a:focus{
+    color: #f1f1f1;
+  }
+
+  .close-icon {
+    width: 20px;
+  }
+
+  .avatar-icon {
+    width: 80px;
+    height: 80px;
+  }
+
+  .search-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .menu-icon {
+    width: 30px;
+  }
+  </style>
+</head>
+<body>
+
+  <nav class="navigation">
+    <h2 class="readable-hidden">메뉴</h2>
+    <ul>
+      <h3 class="readable-hidden">사용자정보</h3>
+      <li>
+        <a href="" class="close-nav"><img src="./icons\delete-button.svg" alt="닫기버튼" class="close-icon"></a>
+      </li>
+      <li><a href="./join.html" class="loggedin-hidden">회원가입</a></li>
+      <li><img src="./icons\user.svg" alt="아바타" class= "login-hidden avatar-icon"></li>
+      <li><p class= "login-hidden">id e-mail</p></li>
+      <li><a href="" class= "login-hidden">사용자 정보 수정</a></li>
+      <li><a class= "login-hidden">로그아웃</a></li>
+      <li><a href="view.html">내가쓴글</a></li>
+      <li><a href="view.html">좋아요누른글</a></li>
+      <li><a href="view.html">가까운글</a></li>
+    </ul>
+    <form action="search">
+      <img src="./icons\tool.svg" alt="searchicon" class="search-icon"><input type="search">
+      <button type="button" name="button">search</button>
+    </form>
+  </nav>
+
+  <a id="navMenu" class="menu-button" href="#menu"><img src="./icons\interface.svg" alt="매뉴아이콘" title="menu" class="menu-icon"></a>
+
+
+<script type="text/javascript">
+  var navStyle = document.querySelector(".navigation");
+  var openNav = document.getElementById("navMenu");
+  var closeNav = document.getElementsByClassName("close-nav")[0];
+  console.log(navStyle.style.width);
+  openNav.onclick = function() {
+    navStyle.style.width = "300px";
+  }
+
+  closeNav.onclick = function() {
+    navStyle.style.width = "0";
+  }
+</script>
+</body>
+</html>

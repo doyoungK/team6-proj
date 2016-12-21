@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Anonymous SNS - PARROT</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+    <a href="#main-contents" class="a11y">본문바로가기</a>
+
+    <header class="header-wrapper">
+      <div class="header">
+        <a href="home.html"><h1 class="logo">PARROT</h1></a>
+
+        <button  class="login-button" id="loginBtn" data-rel="popup">
+          <img src="./icons/login.svg" alt="로그인아이콘" title="login" class="login-icon">
+        </button>
+
+        <fieldset id="loginPopup" class="login-popup">
+          <legend class="readable-hidden">회원 로그인</legend>
+          <form action="" class="login">
+            <div class="login-box">
+              <label for="login_id">아이디</label>
+              <input type="email" id="login_id" required placeholder="email" class="id">
+            </div>
+            <div class="password-box">
+              <label for="login_pass">비밀번호</label>
+              <input type="password" id="login_pass" required placeholder="password">
+            </div>
+            <button>로그인</button>
+            <a href="join.html">회원가입</a>
+            <a href="join.html">비밀번호찾기</a>
+          </form>
+          <a href="" class="close"><img src="./icons/shape.svg" alt="닫기버튼"></a>
+        </fieldset>
+
+        <button id="navMenu" class="menu-button">
+          <img src="./icons/interface.svg" alt="매뉴아이콘" title="menu" class="menu-icon">
+        </button>
+      </div>
+
+      <nav class="navigation">
+        <h2 class="readable-hidden">메뉴</h2>
+        <ul>
+          <h3 class="readable-hidden">사용자정보</h3>
+          <li><img src="./icons/user.svg" alt="아바타" class= "login-hidden avatar-icon"></li>
+          <li><p class= "login-hidden">user's id</p></li>
+        </ul>
+        <ul>
+          <li><a href="view.html">내가쓴글</a></li>
+          <li><a href="view.html">좋아요누른글</a></li>
+          <li><a href="view.html">가까운글</a></li>
+          <li><form action="search">
+            <img src="./icons/tool.svg" alt="searchicon" class="search-icon"><input type="search">
+            <button type="button" name="button">search</button>
+          </form></li>
+        </ul>
+        <ul>
+          <li><a href="" class= "login-hidden">사용자 정보 수정</a></li>
+          <li><a class= "login-hidden">로그아웃</a></li>
+          <li><a href="./join.html" class="loggedin-hidden">회원가입</a></li>
+        </ul>
+
+        <button class="close-nav"><img src="./icons/delete-button.svg" alt="닫기버튼" class="close-icon"></button>
+      </nav>
+
+    </header>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+  <script src="core.js" charset="utf-8"></script>
+  <script src="jquery.easing.min.js" charset="utf-8"></script>
+  <script src="jquery.vgrid.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+      console.log($(".container"));
+      var vg = $(".container").vgrid({
+        easing: "easeOutQuint",
+        useLoadImageEvent: true,
+        time: 1000,
+        delay: 20,
+        fadeIn: {
+          time: 1000,
+          delay: 100,
+          wait: 1000
+        }
+      });
+
+      $(window).load(function(e){
+    		vg.vgrefresh();
+    	});
+    });
+
+    $('.menu-button').on('click', function(){
+      console.log('on');
+      $(".navigation").addClass("navigation-active");
+    });
+    $('.close-nav').on('click', function(){
+      console.log('off');
+      $(".navigation").removeClass("navigation-active");
+    });
+
+
+  </script>
+</body>
+</html>

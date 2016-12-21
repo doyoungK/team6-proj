@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Anonymous SNS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <a href="#main-contents" class="a11y">본문바로가기</a>
+
+
+
+  <main id="main-content">
+
+    <section class="join">
+      <form action="http://www.w3schools.com/html/action_page.php" method="post" enctype="multipart/form-data">
+      <!-- <form action="localhost:3030" method="get"> -->
+        <fieldset class="row1 join_essential">
+          <h1>회원가입</h1>
+          <div class="user-info">
+            <legend class="readable-hidden">필수입력사항</legend>
+            <label for="join_id" >아이디</label>
+            <input type="text" id="join_id" name="join_id" required placeholder="email">
+            <label for="join_pass_1">비밀번호</label>
+            <input type="password" id="join_pass_1" name="join_pass_1" required placeholder="비밀번호">
+            <label for="join_pass_2">비밀번호 확인</label>
+            <input type="password" id="join_pass_2" name="join_pass_2" placeholder="비밀번호 재입력">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend class="readable-hidden">선택입력사항</legend>
+          <div class="input-gender">
+            <div class="male">
+              <input type="radio" name="gender" id="male" value="male">
+              <label for="male">남자</label>
+            </div>
+            <div class="female">
+              <input type="radio" name="gender" id="female" value="female">
+              <label for="female">여자</label>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="birthyear">
+              <select class="select-birthyear" name="">
+                <option value=""></option>
+              </select>
+            </div>
+            <div class="birthyear">
+              <label for="birthyear">출생연도</label>
+              <input id="birth_year" name="birth_year" type="number" min="1950" max="2016" step="1" value="2016" />
+            </div>
+          </div>
+          <div class="row4">
+            <input type="submit" value="가입신청">
+          </div>
+        </fieldset>
+
+      </form>
+    </section>
+
+  </main>
+
+
+
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
+    crossorigin="anonymous"></script>
+  <script src="core.js" charset="utf-8"></script>
+  <script src="jquery.easing.min.js" charset="utf-8"></script>
+  <script src="jquery.vgrid.min.js" charset="utf-8"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    console.log($(".container"));
+    var vg = $(".container").vgrid({
+  easing: "easeOutQuint",
+  useLoadImageEvent: true,
+  time: 1000,
+  delay: 20,
+  fadeIn: {
+    time: 1000,
+    delay: 100,
+    wait: 1000
+  }
+  });
+
+  $(window).load(function(e){
+      vg.vgrefresh();
+    });
+
+});
+$('.menu-button').on('click', function(){
+console.log('on');
+$(".navigation").addClass("navigation-active");
+});
+$('.close-nav').on('click', function(){
+console.log('off');
+$(".navigation").removeClass("navigation-active");
+});
+
+// selection box
+var select = document.querySelector(".select-birthyear");
+for(var i = 1950; i < 2016 ; i++){
+ var input_element = "<option value='"+i+"'>+i+</option>";
+ select.appendChild(input_element);
+}
+
+</script>
+</body>
+</html>
